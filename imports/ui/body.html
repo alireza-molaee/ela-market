@@ -1,0 +1,67 @@
+<body>
+
+<div class="container">
+    <header>
+        <h1>Goods Type</h1>
+
+        <form class="new-goods-type">
+            <input type="text" name="title" placeholder="title" />
+            <br>
+            <input type="number" name="serial" placeholder="serial" />
+            <br>
+            <input type="number" name="price" placeholder="price" />
+            <br>
+            <input type="number" name="goodsCount" placeholder="goods count" />
+            <br>
+            <input type="number" max="100" min="0" name="discount" placeholder="discount" />
+            <br>
+            <button>add</button>
+        </form>
+    </header>
+
+    <table>
+        <tr>
+            <th>Title</th>
+            <th>Serial</th>
+            <th>Price</th>
+            <th>Goods Count</th>
+        </tr>
+        {{#each goodsType}}
+            {{> row}}
+        {{/each}}
+    </table>
+    <table>
+        <tr>
+            <th>Factor Id</th>
+            <th>Type Id</th>
+            <th>Discount</th>
+            <th>Add Date</th>
+        </tr>
+        {{#each goods}}
+            {{> row2}}
+        {{/each}}
+    </table>
+
+</div>
+
+</body>
+
+<template name="row">
+    <tr>
+        <td>{{ title }}</td>
+        <td>{{ serial }}</td>
+        <td>{{ price }}</td>
+        <td>{{ goodsCount }}</td>
+    </tr>
+</template>
+
+<template name="row2">
+    <tr>
+        <td> {{ factorId }}</td>
+        <td> {{ typeId }}</td>
+        <td> {{ discount }}</td>
+        <td> {{ addDate }}</td>
+
+    </tr>
+</template>
+
